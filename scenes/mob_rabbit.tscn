@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfef7wyvpsy61"]
+
+[ext_resource type="Texture2D" uid="uid://bhx6kk8qk2q3y" path="res://Assets/Prueba/Character_Rabbit.png" id="1_478fi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_stt4i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_478fi")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vq5jd"]
+size = Vector2(79, 76)
+
+[node name="mob_rabbit" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(34, -90)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_stt4i")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(41.5, -39)
+shape = SubResource("RectangleShape2D_vq5jd")

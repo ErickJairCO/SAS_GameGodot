@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://co00sctphxj07"]
+
+[ext_resource type="PackedScene" uid="uid://bbs11xonusx28" path="res://scenes/player.tscn" id="1_cdb5d"]
+[ext_resource type="PackedScene" uid="uid://bfef7wyvpsy61" path="res://scenes/mob_rabbit.tscn" id="2_cv3ph"]
+[ext_resource type="PackedScene" uid="uid://b1rjxstnoxhky" path="res://scenes/mob_snake.tscn" id="3_xf38g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3qdou"]
+size = Vector2(1437, 21)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(578, 326)
+
+[node name="Player" parent="." instance=ExtResource("1_cdb5d")]
+position = Vector2(550, 350)
+scale = Vector2(5, 5)
+
+[node name="mob_rabbit" parent="." instance=ExtResource("2_cv3ph")]
+position = Vector2(-100, 500)
+
+[node name="mob_snake" parent="." instance=ExtResource("3_xf38g")]
+position = Vector2(1170, 500)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(599.5, 511.5)
+shape = SubResource("RectangleShape2D_3qdou")
